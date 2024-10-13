@@ -222,13 +222,13 @@ hidpp20drv_read_button_8100(struct ratbag_button *button)
 			break;
 		case HIDPP20_BUTTON_HID_TYPE_KEYBOARD:
 			button->action.type = RATBAG_BUTTON_ACTION_TYPE_KEY;
-			button->action.action.key.key = ratbag_hidraw_get_keycode_from_keyboard_usage(device,
+			button->action.action.key = ratbag_hidraw_get_keycode_from_keyboard_usage(device,
 								profile->buttons[button->index].keyboard_keys.key);
 			modifiers = profile->buttons[button->index].keyboard_keys.modifier_flags;
 			break;
 		case HIDPP20_BUTTON_HID_TYPE_CONSUMER_CONTROL:
 			button->action.type = RATBAG_BUTTON_ACTION_TYPE_KEY;
-			button->action.action.key.key = ratbag_hidraw_get_keycode_from_consumer_usage(device,
+			button->action.action.key = ratbag_hidraw_get_keycode_from_consumer_usage(device,
 								profile->buttons[button->index].consumer_control.consumer_control);
 			break;
 		}
